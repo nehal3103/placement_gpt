@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlacementGPT</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="home-left-side">
+        <h1>Ask us about</h1>
+        <ul>
+          <li>Mentorship Programs</li>
+          <li>Prizes offered</li>
+        </ul>
+      </div>
+      <div class="home-right-side">
+        <h1>PlacementGPT</h1>
+        <div class="chat-container">
+          <div class="chat-history" id="chat-history"></div>
+          <input type="text" id="user-input" placeholder="Enter your query..." />
+          <button id="submit-button">Submit</button>
+          <button id="clear-button">Clear Chat</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../static/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      document
+        .getElementById("submit-button")
+        .addEventListener("click", sendQuery);
+      document
+        .getElementById("clear-button")
+        .addEventListener("click", clearChat);
+    </script>
+  </body>
+</html>
