@@ -8,29 +8,55 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
   </head>
   <body>
     <div class="main-container">
       <div class="home-left-side">
+        <img
+          src="{{ url_for('static', filename='logo.png') }}"
+          alt="Logo"
+          width="200"
+          height="100"
+        />
+        <!-- Adjust the width to your preference -->
+        alt="Logo" width="100" height="100" />
+        <!-- Add this line to include the logo -->
         <h1>Ask us about</h1>
         <ul>
           <li>Mentorship Programs</li>
+          <li>Scholarships</li>
+          <li>Case Study Competitions</li>
+          <li>Eligibility</li>
           <li>Prizes offered</li>
         </ul>
+        <img
+          src="{{ url_for('static', filename='graphic2.png') }}"
+          alt="graphic"
+          width="200"
+          height="250"
+        />
+        <!-- Adjust the width to your preference -->
       </div>
       <div class="home-right-side">
-        <h1>PlacementGPT</h1>
         <div class="chat-container">
           <div class="chat-history" id="chat-history"></div>
-          <input type="text" id="user-input" placeholder="Enter your query..." />
+          <input
+            type="text"
+            id="user-input"
+            placeholder="Enter your query..."
+          />
           <button id="submit-button">Submit</button>
           <button id="clear-button">Clear Chat</button>
         </div>
       </div>
+      <div class="home-right-right-side">
+        <div id="calendar"></div>
+      </div>
     </div>
-
-    <script src="../static/script.js"></script>
+ 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../static/script.js"></script>
     <script>
       document
         .getElementById("submit-button")

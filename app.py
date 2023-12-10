@@ -1,7 +1,7 @@
 import logging
 import openai
 import csv
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, send_from_directory, request, jsonify
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import ConversationalRetrievalChain
@@ -41,6 +41,10 @@ logger = logging.getLogger(__name__)
 def index():
   # Render the index template
   return render_template('index.html')
+
+@app.route('/static/script.js')
+def serve_js():
+    return send_from_directory('static', 'script.js', mimetype='application/javascript')
 
 @app.route("/query", methods=["POST"])
 def get_query_result():
